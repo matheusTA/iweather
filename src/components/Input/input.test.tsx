@@ -1,5 +1,5 @@
-import { Input } from ".";
 import { render, screen } from "@testing-library/react-native";
+import { Input } from ".";
 
 describe("component: input", () => {
   it("should be render input", () => {
