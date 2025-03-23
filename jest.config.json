@@ -6,6 +6,10 @@
   "transformIgnorePatterns": [
     "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg)"
   ],
+  "testPathIgnorePatterns": [
+    "./__tests__/mocks",
+    "./__tests__/utils"
+  ],
   "setupFiles": [
     "./__tests__/mocks/libs/async-storage.js",
     "./__tests__/mocks/libs/react-native-safe-area-context.js"
@@ -13,5 +17,14 @@
   "transform": {
     "^.+\\.jsx?$": "babel-jest",
     "^.+\\.svg$": "jest-transformer-svg"
-  }
+  },
+  "collectCoverageFrom": [
+    "./src/**/*.{ts,tsx}",
+    "!./src/**/styles.ts"
+  ],
+  "coveragePathIgnorePatterns": [
+    "./src/@types",
+    "./src/styles",
+    "./src/libs/dayjs/index.ts"
+  ]
 }
